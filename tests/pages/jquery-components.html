@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Patternfly JQuery Components</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../dist/img/favicon.ico">
+    <link rel="stylesheet" href="../../dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../../dist/css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="../../pf-jquery-components.css">
+  </head>
+  <body>
+  <header id="header">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="../../dist/img/logo-alt.svg"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="https://github.com/patternfly/patternfly">Github</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="jquery-components.html">Components<span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="doc-wrapper">
+      <div class="container">
+        <div id="doc-header" class="doc-header text-center">
+          <h1 class="doc-title">JQuery Components</h1>
+        </div>
+        <!-- //doc-header -->
+        <div class="doc-body">
+          <div class="doc-content">
+            <div class="content-inner">
+              <!-- Overview -->
+              <section id ="overview" class="doc-section">
+                <h2 class="section-title">Overview</h2>
+                <div class="section-block">
+                  <p>Patternfly JQuery components require <code>patternfly.css</code> and <code>patternfly-additions.css</code>.
+                  </p>
+                  <pre class="  language-html"><code class="  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../dist/css/patternfly.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../dist/css/patternfly-additions.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+                  <p>Components can be installed individually (using individual <code>*.js</code></code> files) or all at once
+                  (using <code>patternfly.js</code>).</p>
+                  <pre class="  language-html"><code class="  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../dist/js/patternfly.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+                </div>
+              <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+              <!-- Bootstrap Datepicker -->
+              <section id="date-picker" class="doc-section">
+                <h2 class="section-title">Bootstrap Datepicker</h2>
+                <div class="section-block">
+                  <div class="docs-example">
+                    <div id="datepicker" class="input-group date">
+                      <input type="text" class="form-control bootstrap-datepicker" readonly="">
+                      <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                  <pre class="  language-html"><code class="  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control bootstrap-datepicker<span class="token punctuation">"</span></span></span></span>&gt;
+</code></pre>
+
+                  <pre class="  language-javascript"><code class="  language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js<span class="token punctuation">"</span></span></span></span>&gt;
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span></span>&gt;
+  <span>// Initialize Bootstrap-datepicker
+    $(<span class="token string">'.bootstrap-datepicker'</span>).<span class="token function">datepicker</span>({
+      <span class="token constant">autoclose</span>: true,
+      <span class="token constant">todayBtn</span>: "linked",
+      <span class="token constant">todayHighlight</span>: true
+    });</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span></span>&gt;
+</code></pre>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+              <!-- Popover -->
+              <section id="popover" class="doc-section">
+                <h2 class="section-title">Popover</h2>
+                <div class="section-block">
+                  <div class="docs-example">
+                    <div>
+                      <a href="#" class="btn btn-default" data-toggle="popover" data-html="true" title="1 http smartproxy 1 http http http" data-content="This is more information about a smartproxy. This is more information about a smartproxy. This is more information about a smartproxy. This is more information about a smartproxy." data-close="true">Click to toggle popover 1</a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                      <a href="#" class="btn btn-default" data-toggle="popover" data-html="true" title="" data-content="Close icon with no Title text. This is more information about a smartproxy. This is more information about a smartproxy. This is more information about a smartproxy." data-close="true">Click to toggle popover 2</a>
+                    </div>
+                    <div style="margin: 20px 0;">
+                      <a href="#" class="btn btn-default" data-toggle="popover" data-html="true" title="3 popover example" data-content="Popover with no Close icon.
+                      This is more information about a smartproxy. This is more information about a smartproxy. This is more information about a smartproxy.">Click to toggle popover 3
+                      </a>
+                    </div>
+                    <div style="margin: 20px 0;">
+                      <a href="#" class="btn btn-default" data-toggle="popover" data-html="true" title="" data-content="Empty Title example.
+                      This is more information about a smartproxy. This is more information about a smartproxy. This is more information about a smartproxy.">Click to toggle popover 4
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- section-block -->
+              </section>
+              <!-- //doc-section -->
+            </div>
+            <!-- //content-inner -->
+          </div>
+          <!-- //doc-content -->
+          <div class="doc-sidebar">
+            <nav id="doc-nav">
+              <ul id="doc-menu" class="nav doc-menu hidden-xs affix-top" data-spy="affix">
+                <li class=""><a class="scrollto" href="#datepicker">Bootstrap Datepicker</a></li>
+                <li class=""><a class="scrollto" href="#popover">Popover</a></li>
+                <li>
+                  <a class="scrollto" href="#component">Component</a>
+                  <ul class="nav doc-sub-menu">
+                    <li><a class="scrollto" href="#component">Component</a></li>
+                  </ul>
+                  <!-- //nav -->
+                </li>
+                <li><a class="scrollto" href="#component">Component</a></li>
+                <li><a class="scrollto" href="#component">Component</a></li>
+              </ul>
+              <!-- //doc-menu -->
+            </nav>
+          </div>
+          <!-- //doc-sidebar -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+  <script src="../../dist/js/patternfly.js"></script>
+  <script>
+    $('#datepicker').datepicker({
+      autoclose: true,
+      orientation: "top auto",
+      todayBtn: "linked",
+      todayHighlight: true
+    });
+  </script>
+
+  <script>
+    // Initialize Popovers
+    $(document).ready(function() {
+      $('[data-toggle=popover]').popovers()
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+  </body>
+</html>
