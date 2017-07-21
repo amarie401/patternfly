@@ -70,47 +70,21 @@ body {
 }
 
 pre {
-font-size: 14.4px;
-}
-
-pre, code {
-background: #f5f5f5;
-border-radius: 0;
-border-color: #d8d8d8;
-margin: 0;
-}
-
-code[class*="language-"], pre[class*="language-"] {
-color: #f8f8f2;
-background: none;
-text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-text-align: left;
-white-space: pre;
-word-spacing: normal;
-word-break: normal;
-word-wrap: normal;
-line-height: 1.5;
--moz-tab-size: 4;
--o-tab-size: 4;
-tab-size: 4;
--webkit-hyphens: none;
--moz-hyphens: none;
--ms-hyphens: none;
-hyphens: none;
-}
-
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 1.1em 0;
+  font-size: 14.4px;
+  max-height: 200px;
   overflow: auto;
 }
-
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #272822;
+pre code {
+  overflow: auto;
+  white-space: pre;
 }
 
 .token.property, .token.tag, .token.constant, .token.symbol, .token.deleted {
   color: #f92672;
+}
+
+.token.comment {
+  color: slategray;
 }
 
 .token.punctuation {
@@ -125,15 +99,14 @@ pre[class*="language-"] {
   color: #e6db74;
 }
 
+.token.keyword {
+  color: #66d9ef;
+}
+
 code .tag {
   font-size: inherit;
   padding: 0;
   display: inherit;
-}
-
-.section-block {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .doc-section {
@@ -159,9 +132,7 @@ code .tag {
   content: 'EXAMPLE';
 }
 
-/*.input-group {*/
-  /*position: relative;*/
-  /*display: table;*/
-  /*border-collapse: separate;*/
-/*}*/
+.docs-example.char-count {
+  padding-bottom: 3em;
+}
 
