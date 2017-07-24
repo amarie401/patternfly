@@ -2,6 +2,13 @@ body {
   font-size: 14px;
 }
 
+.bootstrap-switch .bootstrap-switch-handle-on,
+.bootstrap-switch .bootstrap-switch-label,
+.bootstrap-switch .bootstrap-switch-handle-off,
+.bootstrap-switch .bootstrap-switch-label {
+   height: inherit;
+}
+
 .navbar-brand {
   padding: 8px 20px;
 }
@@ -39,7 +46,7 @@ body {
 
 .affix-top {
   position: absolute;
-  top: 15px;
+  top: 193px;
 }
 
 .doc-menu {
@@ -50,18 +57,6 @@ body {
 
 .doc-menu > li {
   margin-bottom: 5px;
-}
-
-/*.doc-menu > li > a {*/
-  /*display: block;*/
-  /*padding: 5px 15px;*/
-  /*border-left: 4px solid transparent;*/
-  /*color: #616670;*/
-/*}*/
-
-.doc-section {
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .section-block {
@@ -79,30 +74,6 @@ pre code {
   white-space: pre;
 }
 
-.token.property, .token.tag, .token.constant, .token.symbol, .token.deleted {
-  color: #f92672;
-}
-
-.token.comment {
-  color: slategray;
-}
-
-.token.punctuation {
-  color: #f8f8f2;
-}
-
-.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
-  color: #a6e22e;
-}
-
-.token.atrule, .token.attr-value, .token.function {
-  color: #e6db74;
-}
-
-.token.keyword {
-  color: #66d9ef;
-}
-
 code .tag {
   font-size: inherit;
   padding: 0;
@@ -114,14 +85,14 @@ code .tag {
   padding-bottom: 15px;
 }
 
-.docs-example {
+.doc-example {
   position: relative;
   padding: 4em 1em 1em;
   border: 1px solid #d8d8d8;
   margin: 1.5rem 0 0;
 }
 
-.docs-example::before {
+.doc-example::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -132,7 +103,7 @@ code .tag {
   content: 'EXAMPLE';
 }
 
-.docs-example.char-count {
+.doc-example.char-count {
   padding-bottom: 3em;
 }
 
