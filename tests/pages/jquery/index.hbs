@@ -14,6 +14,8 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
   <script defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script defer src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script defer src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
   <script defer src="../../js/patternfly.js"></script>
   <script defer src="src/accordion.js"></script>
   <script defer src="src/application-launcher.js"></script>
@@ -25,6 +27,7 @@
   <script defer src="src/bootstrap-treeview.js"></script>
   <script defer src="src/count-remaining-char.js"></script>
   <script defer src="src/popover.js"></script>
+  <script defer src="src/tableview.js"></script>
   <script defer src="src/tooltip.js"></script>
   <script defer src="src/wizard.js"></script>
 </head>
@@ -50,9 +53,9 @@
             <li class="active"><a href="jquery-components.html">Components<span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
-        <!-- /.navbar-collapse -->
+        <!-- //navbar-collapse -->
       </div>
-      <!-- /.container-fluid -->
+      <!-- //container-fluid -->
     </nav>
 
     <div class="doc-wrapper">
@@ -183,7 +186,7 @@
                     {{{code 'tests/pages/jquery/src/bootstrap-select.js'}}}
                   </div>
                 </div>
-                <!-- section-block -->
+                <!-- //section-block -->
               </section>
               <!-- //doc-section -->
 
@@ -205,7 +208,7 @@
                     {{{code 'tests/pages/jquery/src/bootstrap-switch.js'}}}
                   </div>
                 </div>
-                <!-- section-block -->
+                <!-- //section-block -->
               </section>
               <!-- //doc-section -->
 
@@ -227,9 +230,9 @@
                     {{{code 'tests/pages/jquery/src/bootstrap-touchspin.js'}}}
                   </div>
                 </div>
-                <!-- section-block -->
+                <!-- //section-block -->
               </section>
-              <!-- doc-section -->
+              <!-- //doc-section -->
 
               <!-- Bootstrap Tree View-->
               <section id="treeview" class="doc-section">
@@ -249,9 +252,33 @@
                     {{{code 'tests/pages/jquery/src/bootstrap-treeview.js'}}}
                   </div>
                 </div>
-                <!-- section-block -->
+                <!-- //section-block -->
               </section>
               <!-- //doc-section-->
+
+              <!-- Card View -->
+              <section id="cardview" class="doc-section">
+                <h2 class="section-title">Card View</h2>
+                <div class="section-block">
+                  <p>Card View organizes content into a grid of cards. Card View is useful for displaying a small to moderate amount of content in a way that is not visually overwhelming. If the pieces of content to be displayed are best identified by a graphic or other visual representation, Card View enables a user to easily visualize and compare them. It is also useful when you want to present a large number of objects at once within the same summary page.</p>
+                  <p>The Card View should <b>NOT</b> be used if:</p>
+                  <ul>
+                    <li>Users need to quickly scan a large amount of text-based content. Consider using a <a href="http://www.patternfly.org/pattern-library/content-views/table-view/">Table View</a>.</li>
+                    <li>You want to display more content about each object that can fit into a small tile. Consider using a <a href="http://www.patternfly.org/pattern-library/content-views/list-view/">List View</a>.</li>
+                  </ul>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/cardview.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/cardview.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/cardview.js'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
 
               <!-- Count Remaining Characters -->
               <section id="count" class="doc-section">
@@ -271,7 +298,26 @@
                 </div>
                 <!-- //section-block -->
               </section>
-              <!-- //docs-section -->
+              <!-- //doc-section -->
+
+              <!-- List View -->
+              <section id="listview" class="doc-section">
+                <h2 class="section-title">List View</h2>
+                <div class="section-block">
+                  <p>A List View displays data in rows. Each row displays the same set of attributes, although not necessarily displayed in columns, and the attributes may wrap. The List View omits column headers and other visual noise, making it a cleaner visualization than a data table.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/listview.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/listview.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/listview.js'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
 
               <!-- Popover -->
               <section id="popover" class="doc-section">
@@ -289,7 +335,30 @@
                     {{{code 'tests/pages/jquery/src/popover.js'}}}
                   </div>
                 </div>
-                <!-- section-block -->
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <section id="tableview" class="doc-section">
+                <h2 class="section-title">Table View</h2>
+                <div class="section-block">
+                  <p>Table View organizes data into rows (of items) and columns (of item attributes). Tables make structured data easy to scan, compare, sort, and analyze. Tables can be embedded into other design patterns. Tables are familiar to users and often the correct choice for structured data, but be careful not to overuse tables. Here are some examples of when not to use a table:</p>
+                  <p>The table pattern should <b>NOT</b> be used if:</p>
+                  <ul>
+                    <li>Users need to find patterns within a data set. Consider a line chart or a bar chart.</li>
+                    <li>Users need to browse the data set without knowing exactly what to look for. Consider using a <a href="http://www.patternfly.org/pattern-library/content-views/list-view/">List View</a>.</li>
+                  </ul>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/tableview.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/tableview.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/tableview.js'}}}
+                  </div>
+                </div>
+                 <!-- //section-block -->
               </section>
               <!-- //doc-section -->
 
@@ -311,6 +380,22 @@
                 <!-- //section-block -->
               </section>
               <!-- //doc section -->
+
+              <!-- TreeGrid Table -->
+              <section id="treegridtable" class="doc-section">
+                <h2 class="section-title">TreeGrid Table</h2>
+                <div class="section-block">
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/treegridtable.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/treegridtable.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/treegridtable.js'}}}
+                  </div>
+                </div>
+              </section>
 
               <!-- Tooltip -->
               <section id="tooltip" class="doc-section">
@@ -365,9 +450,13 @@
                 <li><a class="scrollto" href="#switch">Bootstrap Switch</a></li>
                 <li><a class="scrollto" href="#touchspin">Bootstrap Touchspin</a></li>
                 <li><a class="scrollto" href="#treeview">Bootstrap Tree View</a></li>
+                <li><a class="scrollto" href="cardview">Card View</a></li>
                 <li><a class="scrollto" href="#count">Count Remaining Characters</a></li>
+                <li><a class="scrollto" href="#listview">List View</a></li>
                 <li><a class="scrollto" href="#popover">Popover</a></li>
+                <li><a class="scrollto" href="#tableview">Table View</a></li>
                 <li><a class="scrollto" href="#timepicker">Timepicker</a></li>
+                <li><a class="scrollto" href="#treegridtable">TreeGrid Table</a></li>
                 <li><a class="scrollto" href="#tooltip">Tooltip</a></li>
                 <li><a class="scrollto" href="#wizard">Wizard</a></li>
               </ul>

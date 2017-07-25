@@ -46,7 +46,7 @@ body {
 
 .affix-top {
   position: absolute;
-  top: 193px;
+  top: 23px;
 }
 
 .doc-menu {
@@ -105,5 +105,9 @@ code .tag {
 
 .doc-example.char-count {
   padding-bottom: 3em;
+}
+
+.content-view-pf-pagination .form-group:last-child {
+  align-items: center;
 }
 
