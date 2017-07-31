@@ -16,8 +16,12 @@
   <script defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <script defer src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
   <script defer src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
   <script defer src="../../js/patternfly.js"></script>
   <script defer src="src/accordion.js"></script>
+  <script defer src="src/aggregate-card.js"></script>
   <script defer src="src/application-launcher.js"></script>
   <script defer src="src/bootstrap-combobox.js"></script>
   <script defer src="src/bootstrap-datepicker.js"></script>
@@ -25,10 +29,21 @@
   <script defer src="src/bootstrap-switch.js"></script>
   <script defer src="src/bootstrap-touchspin.js"></script>
   <script defer src="src/bootstrap-treeview.js"></script>
+  <script defer src="src/cardview.js"></script>
   <script defer src="src/count-remaining-char.js"></script>
+  <script defer src="src/horizontal-drawer.js"></script>
+  <script defer src="src/list.js"></script>
+  <script defer src="src/listview.js"></script>
+  <script defer src="src/listview-rows.js"></script>
   <script defer src="src/popover.js"></script>
+  <script defer src="src/progressbars.js"></script>
+  <script defer src="src/search.js"></script>
   <script defer src="src/tableview.js"></script>
+  <script defer src="src/timepicker.js"></script>
+  <script defer src="src/toolbar.js"></script>
   <script defer src="src/tooltip.js"></script>
+  <script defer src="src/vertical-drawer.js"></script>
+  <script defer src="src/utilization-barchart.js"></script>
   <script defer src="src/wizard.js"></script>
 </head>
 <body>
@@ -85,7 +100,8 @@
 
               <!-- Accordion -->
               <section id="accordion" class="doc-section">
-                <h2 class="section-title">Accordion (Fixed Height)</h2>
+                <h2 class="section-title">Accordion</h2>
+                <h3>Fixed Height</h3>
                 <div class="section-block">
                   <p>See <a href="http://getbootstrap.com/javascript/#collapse">http://getbootstrap.com/javascript/#collapse</a> for complete accordion documentation.</p>
                   <div class="doc-example">
@@ -101,6 +117,25 @@
                 <!-- //section-block -->
               </section>
               <!-- //doc-section -->
+
+              <!-- Aggregate Status Card -->
+              <section id="aggregate" class="doc-section">
+                <h2 class="section-title">Aggregate Status Card</h2>
+                <div class="section-block">
+                  <p>The Aggregate Status Card shows a total number of objects and an aggregated status for those objects. The most common use case for this pattern is seen in a dashboard view to illustrate the total count and the status of objects in an environment. The mini card alternate can be used in the case when there is less space available for the status card as well as when there is less information to show in the card.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/aggregate-card.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/aggregate-card.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/aggregate-card.js'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section
 
               <!--- Application Launcher -->
               <section id="launcher" class="doc-section">
@@ -300,6 +335,19 @@
               </section>
               <!-- //doc-section -->
 
+              <!-- List -->
+              <section id="list" class="doc-section">
+                <h2 class="section-title">Basic List With Expansion</h2>
+                <div class="section-block">
+                  <p>For official documentation, see <a href="https://www.patternfly.org">https://www.patternfly.org</a> and <a href="http://getbootstrap.com">http://getbootstrap.com</a>.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/list.html'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
               <!-- List View -->
               <section id="listview" class="doc-section">
                 <h2 class="section-title">List View</h2>
@@ -314,6 +362,49 @@
                   <div class="doc-example-js">
                     {{{code 'tests/pages/jquery/src/listview.js'}}}
                   </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <!-- List View Rows -->
+              <section id="listviewrows">
+                <h2 class="section-title">List View Rows</h2>
+                <div class="section-block">
+                  <p>For official documentation, see <a href="https://www.patternfly.org">https://www.patternfly.org</a> and <a href="http://getbootstrap.com">http://getbootstrap.com</a>.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/listview-rows.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/listview-rows.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/listview-rows.js'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <!-- Notification Drawer -->
+              <section id="notification" class="doc-section">
+                <h2 class="section-title">Notification Drawer</h2>
+                <div class="section-block">
+                  <p>The Notification Drawer is a content delivery system such as events, tasks, and alerts. It is a self contained system that is viewable without having to navigate to another area of the application. Upon login it offers initial notifications for what has changed in the form of dismissible <a href="http://www.patternfly.org/pattern-library/communication/toast-notifications/">Toast Notifications</a> and a permanent interactive icon in the header bar. It is hidden or revealed at the user’s request.</p>
+                  <h3 id="horizontal">Horizontal Navigation</h3>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/horizontal-drawer.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/horizontal-drawer.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/horizontal-drawer.js'}}}
+                  </div>
+                </div>
+                <h3 id="vertical">Vertical Navigation</h3>
+                <div class="doc-example">
+                  {{{include 'tests/pages/jquery/src/vertical-drawer.html'}}}
                 </div>
                 <!-- //section-block -->
               </section>
@@ -339,6 +430,38 @@
               </section>
               <!-- //doc-section -->
 
+              <!-- Progress Bars -->
+              <section id="progressbars" class="doc-section">
+                <h2 class="section-title">Progress Bars With Tooltip</h2>
+                <div class="section-block">
+                  <p>For official documentation, see <a href="https://www.patternfly.org">https://www.patternfly.org</a> and <a href="http://getbootstrap.com">http://getbootstrap.com</a>.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/progressbars.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/progressbars.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/progressbars.js'}}}
+                  </div>
+                </div>
+              </section>
+              <!-- //doc-section -->
+
+              <!-- Search -->
+              <section id="search" class="doc-section">
+                <h2 class="section-title">Search</h2>
+                <div class="section-block">
+                  <p>For official documentation, see <a href="https://www.patternfly.org">https://www.patternfly.org</a> and <a href="http://getbootstrap.com">http://getbootstrap.com</a>.</p>
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/search.html'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <!-- Table View -->
               <section id="tableview" class="doc-section">
                 <h2 class="section-title">Table View</h2>
                 <div class="section-block">
@@ -381,21 +504,32 @@
               </section>
               <!-- //doc section -->
 
-              <!-- TreeGrid Table -->
-              <section id="treegridtable" class="doc-section">
-                <h2 class="section-title">TreeGrid Table</h2>
+              <!-- Toolbar -->
+              <section id="toolbar" class="doc-section">
+                <h2 class="section-title">Toolbar</h2>
                 <div class="section-block">
+                  <p>The Toolbar pattern sits above a content view such as a <a href="http://www.patternfly.org/pattern-library/content-views/list-view/">List View</a>, <a href="http://www.patternfly.org/pattern-library/content-views/card-view/">Card View</a> or <a href="http://www.patternfly.org/pattern-library/content-views/table-view/">Table View</a>. The Toolbar provides a framework for a number of content control patterns including, but not limited to:</p>
+                  <ul>
+                    <li>Filter</li>
+                    <li>Sort</li>
+                    <li>Actions</li>
+                    <li><a href="http://www.patternfly.org/pattern-library/forms-and-controls/find/">Find</a></li>
+                    <li>Change View</li>
+                  </ul>
+                  <p>These controls may be used either together or individually, and may be substituted for other components. The Toolbar pattern should be used any time controls are needed for a content view.</p>
                   <div class="doc-example">
-                    {{{include 'tests/pages/jquery/src/treegridtable.html'}}}
+                    {{{include 'tests/pages/jquery/src/toolbar.html'}}}
                   </div>
                   <div class="doc-example-html">
-                    {{{template 'tests/pages/jquery/src/treegridtable.html'}}}
+                    {{{template 'tests/pages/jquery/src/toolbar.html'}}}
                   </div>
                   <div class="doc-example-js">
-                    {{{code 'tests/pages/jquery/src/treegridtable.js'}}}
+                    {{{code 'tests/pages/jquery/src/toolbar.js'}}}
                   </div>
                 </div>
+                <!-- //section-block -->
               </section>
+              <!-- //doc-section -->
 
               <!-- Tooltip -->
               <section id="tooltip" class="doc-section">
@@ -410,6 +544,42 @@
                   </div>
                   <div class="doc-example-js"></div>
                   {{{code 'tests/pages/jquery/src/tooltip.js'}}}
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <!-- TreeGrid Table -->
+              <section id="treegridtable" class="doc-section">
+                <h2 class="section-title">TreeGrid Table</h2>
+                <div class="section-block">
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/treegridtable.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/treegridtable.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/treegridtable.js'}}}
+                  </div>
+                </div>
+                <!-- //section-block -->
+              </section>
+              <!-- //doc-section -->
+
+              <!-- Utilization Bar Chart -->
+              <section id="utilization" class="doc-section">
+                <h2 class="section-title">Utilization Bar Chart</h2>
+                <div class="section-block">
+                  <div class="doc-example">
+                    {{{include 'tests/pages/jquery/src/utilization-barchart.html'}}}
+                  </div>
+                  <div class="doc-example-html">
+                    {{{template 'tests/pages/jquery/src/utilization-barchart.html'}}}
+                  </div>
+                  <div class="doc-example-js">
+                    {{{code 'tests/pages/jquery/src/utilization-barchart.js'}}}
+                  </div>
                 </div>
                 <!-- //section-block -->
               </section>
@@ -441,24 +611,37 @@
           <div class="doc-sidebar">
             <nav id="doc-nav">
               <ul id="doc-menu" class="nav doc-menu hidden-xs affix-top">
-                <!-- implement scrollto script & styles -->
-                <li><a class="scrollto" href="#accordion">Accordion (Fixed Height)</a></li>
-                <li><a class="scrollto" href="#launcher">Application Launcher</a></li>
-                <li><a class="scrollto" href="#combobox">Bootstrap Combobox</a></li>
-                <li><a class="scrollto" href="#datepicker">Bootstrap Datepicker</a></li>
-                <li><a class="scrollto" href="#select">Bootstrap Select</a></li>
-                <li><a class="scrollto" href="#switch">Bootstrap Switch</a></li>
-                <li><a class="scrollto" href="#touchspin">Bootstrap Touchspin</a></li>
-                <li><a class="scrollto" href="#treeview">Bootstrap Tree View</a></li>
-                <li><a class="scrollto" href="cardview">Card View</a></li>
-                <li><a class="scrollto" href="#count">Count Remaining Characters</a></li>
-                <li><a class="scrollto" href="#listview">List View</a></li>
-                <li><a class="scrollto" href="#popover">Popover</a></li>
-                <li><a class="scrollto" href="#tableview">Table View</a></li>
-                <li><a class="scrollto" href="#timepicker">Timepicker</a></li>
-                <li><a class="scrollto" href="#treegridtable">TreeGrid Table</a></li>
-                <li><a class="scrollto" href="#tooltip">Tooltip</a></li>
-                <li><a class="scrollto" href="#wizard">Wizard</a></li>
+                <li><a href="#accordion">Accordion</a></li>
+                <li><a href="#aggregate">Aggregate Status Card</a></li>
+                <li><a href="#launcher">Application Launcher</a></li>
+                <li><a href="#combobox">Bootstrap Combobox</a></li>
+                <li><a href="#datepicker">Bootstrap Datepicker</a></li>
+                <li><a href="#select">Bootstrap Select</a></li>
+                <li><a href="#switch">Bootstrap Switch</a></li>
+                <li><a href="#touchspin">Bootstrap Touchspin</a></li>
+                <li><a href="#treeview">Bootstrap Tree View</a></li>
+                <li><a href="#cardview">Card View</a></li>
+                <li><a href="#count">Count Remaining Characters</a></li>
+                <li><a href="#list">List</a></li>
+                <li><a href="#listview">List View</a></li>
+                <li><a href="#listviewrows">List View Rows</a></li>
+                <li>
+                  <a href="#notification">Notification Drawer</a>
+                  <ul class="doc-sub-menu">
+                    <li><a href="#horizontal">Horizontal Navigation</a></li>
+                    <li><a href="#vertical">Vertical Navigation</a></li>
+                  </ul>
+                </li>
+                <li><a href="#popover">Popover</a></li>
+                <li><a href="#progressbars">Progress Bars</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#tableview">Table View</a></li>
+                <li><a href="#timepicker">Timepicker</a></li>
+                <li><a href="#toolbar">Toolbar</a></li>
+                <li><a href="#tooltip">Tooltip</a></li>
+                <li><a href="#treegridtable">TreeGrid Table</a></li>
+                <li><a href="#utilization">Utilization Bar Chart</a></li>
+                <li><a href="#wizard">Wizard</a></li>
               </ul>
               <!-- //doc-menu -->
             </nav>
